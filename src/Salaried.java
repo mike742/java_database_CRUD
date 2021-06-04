@@ -1,7 +1,6 @@
 import java.util.Scanner;
 
 public class Salaried extends Employee {
-	
 	private double _weekly_salary;
 	private static Scanner _sn = new Scanner(System.in);
 	

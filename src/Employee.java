@@ -1,15 +1,44 @@
 import java.util.Calendar;
 import java.util.Scanner;
 
-public abstract  class Employee {
+public abstract class Employee {
 
 	private String _name;
-	private String _ssn;			// social security number
+	private String _ssn;			
 	private int _birthdayMonth;
 	private int _birthdayWeek;
 	private static Scanner _sn = new Scanner(System.in);
-	
+
 	public abstract  double getEarnings();
+	
+	public void setName(String value) {
+		_name = value;
+	} 
+	
+	public String getName() {
+		return _name;
+	}
+	
+	public String getSSN() {
+		return _ssn;
+	}
+	
+	public int getBirthdayMonth() {
+		return _birthdayMonth;
+	}
+
+	public int getBirthdayWeek() {
+		return _birthdayWeek;
+	}
+	
+	public Employee() {}
+	
+	public Employee(String name, String ssn, int birthdayMonth, int birthdayWeek) {
+		_name = name;
+		_ssn = ssn;
+		_birthdayMonth = birthdayMonth;
+		_birthdayWeek = birthdayWeek;
+	}
 	
 	public void load() {
 		System.out.print("Name ==> ");
@@ -48,5 +77,8 @@ public abstract  class Employee {
 		}		
 		return 0;
 	}
-	
+	public String getQueryValues() {
+		return "'" + _name + "', '" + _ssn + "'," + _birthdayMonth + "," + _birthdayWeek;
+	}
+
 }
